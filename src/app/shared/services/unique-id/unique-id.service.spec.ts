@@ -14,6 +14,14 @@ describe('UniqueServiceId', () => {
         expect(id).toContain('app-')
     });
 
+    it(`#${UniqueServiceId.prototype.getNumberOfGeneratedUniqueIds.name}
+    should return the number of generatedIds when called`, () => {
+    service.generateUniqueIdWithPrefix('app');
+    service.generateUniqueIdWithPrefix('app');
+    expect(service.getNumberOfGeneratedUniqueIds()).toBe(2);
+  });
+
+
 });
 
 
